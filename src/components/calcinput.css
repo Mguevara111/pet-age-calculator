@@ -1,0 +1,61 @@
+
+.calcinput-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:blueviolet;
+    /* border: thick dashed greenyellow; */
+    margin-bottom: 2rem;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+.calcinput-container input[type="number"],
+.calcinput-container select{
+    min-width: 20%;
+    max-width: 50%;
+    color: blueviolet;
+   outline: none;
+    border: thick solid blueviolet;
+}
+.calcinput-container input[name="dogbreed"]{
+    
+    width: 2rem;
+    height: 2rem;
+    
+    border: thick solid blueviolet;
+    border-radius: 50%;
+    color:black;
+}
+
+.btncalc{
+    width: 5rem;
+    height: 5rem;
+      
+    background-image: url('../images/huellasinfondo.png');
+    background-color: blueviolet;
+    border-color: blueviolet;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    color:antiquewhite;
+    box-shadow: 0.5rem 0.5rem 1rem black;
+    margin-bottom: 2rem;
+}
+.btnreset{
+    width: 6rem;
+    height: 2rem;
+    border-radius: 10px;
+    margin-bottom: 0;
+    background-color: blueviolet;
+    color: antiquewhite;
+    cursor: pointer;
+    
+}

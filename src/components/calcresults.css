@@ -1,0 +1,31 @@
+.result-container{
+    width: 100%;
+    height: auto;
+    /* border: thick solid violet; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:blueviolet;
+    font-size: 1.5rem;
+    
+}
+.result-container h2{
+    margin: 1rem;
+}
+.result-container p{
+    margin:1rem;
+}
+.results-image{
+    width: clamp(50px, 30vw, 250px);
+    height: clamp(50px, 30vw, 250px);
+}
+
+@media screen and (max-width:48em) {
+    .result-container h2{
+        margin: 0;
+    }
+    .result-container p{
+        margin:0;
+    }
+}
