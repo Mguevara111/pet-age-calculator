@@ -36,9 +36,9 @@ export function CalcResults({tasks}){
     const calcs=(val1,val2,cont)=>{
         //console.log('calcs',typeof tasks.age)
           let val=0;
-            if(tasks.age==='1'){
+            if(Number(tasks.age)===1){
                     setSoloage(val1);
-                }else if(tasks.age==='2'){
+                }else if(Number(tasks.age)===2){
                     setSoloage(val2);
                 }else if(Number(tasks.age)>=3){
                     for(let f=0;f<(Number(tasks.age)-2);f++){
