@@ -2,14 +2,15 @@ import React from "react";
 import './calcresults.css';
 import dogphoto from '../images/dog.png'
 import { useEffect,useState } from "react";
-let age;
+//let age;
 
 export function CalcResults({tasks}){
-   // console.log('cb',tasks)
-    let val=0;
+   //console.log('cb',tasks.age)
+  
     //let path;
     const [path,setPath]=useState('');
     const [myurl,setMyurl]=useState('');
+    const [soloage,setSoloage]=useState('');
     
     useEffect(()=>{
         if(path){
@@ -33,16 +34,18 @@ export function CalcResults({tasks}){
     }
 
     const calcs=(val1,val2,cont)=>{
+        //console.log('calcs',typeof tasks.age)
+          let val=0;
             if(tasks.age==='1'){
-                    age=val1;
+                    setSoloage(val1);
                 }else if(tasks.age==='2'){
-                    age=val2;
-                }else if(tasks.age>='3'){
+                    setSoloage(val2);
+                }else if(Number(tasks.age)>=3){
                     for(let f=0;f<(Number(tasks.age)-2);f++){
                         val+=cont;
                         //console.log(val)
                     }
-                    age=val2+val;
+                    setSoloage(val2+val);
                 }
     }
 
@@ -61,6 +64,7 @@ export function CalcResults({tasks}){
 }
 
     const calcothers=(resultsvalue)=>{
+        //console.log('calcothers')
         switch(resultsvalue){
             case 'cat':
                 calcs(15,24,4)
@@ -72,11 +76,13 @@ export function CalcResults({tasks}){
                 calcs(18,26,8)
                 break;
             case 'bird':
-                calcs(15,30,15);
+                calcs(5,18,9);
+                break;
         }
     }
 
     const calcage=()=>{
+        //console.log('calcage')
         if(tasks.breedval==='DOG'){
             setPath('dog')
             //path='./src/images/dog.png'
@@ -89,7 +95,7 @@ export function CalcResults({tasks}){
             calcothers('bunny');
             setPath('bunny')
            // path='./src/images/bunny.png'
-        }else if(tasks.breedval==='BIRD'){
+        }else if(tasks.breedval==='PARAKEET'){
             calcothers('bird');
             setPath('bird')
         // path='./src/images/bird.png'
@@ -105,7 +111,7 @@ export function CalcResults({tasks}){
         <section className="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6 font-xs font-sm font-md font-lg font-xl">
             <article className="result-container">
                 <h2>Results:</h2>
-                <p>Your {tasks.breedval} age is: {age}</p>
+                <p>Your {tasks.breedval} age is: {soloage}</p>
                 <img src={myurl||dogphoto} alt="pet" className="results-image"/>
             </article> 
         </section>

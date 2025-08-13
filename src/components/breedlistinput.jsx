@@ -1,5 +1,5 @@
 import React from "react";
-const breeds=['---','DOG','CAT','BUNNY','BIRD','GOLDFISH'];
+const breeds=['---','DOG','CAT','BUNNY','PARAKEET','GOLDFISH'];
 
 export function Breedlistinput({dispatch,tasks,mydisabled}){
     

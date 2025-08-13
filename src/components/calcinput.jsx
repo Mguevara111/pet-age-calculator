@@ -10,13 +10,13 @@ export function Calcinput({dispatch,tasks}){
     let newdata={};
 
     function changeform(e){
+        //console.log(e.target.value)
         newdata={...tasks.breed,[e.target.name]:e.target.value}
         dispatch({type:'changeform',payload:newdata})
     }
 
     function submit(e){
         e.preventDefault();
-        console.log('los del tasks',tasks.breed)
         dispatch({type:'submit',payload:tasks.breed})
         if(tasks.breed.breedval!=='' && tasks.breed.age!==''){
             setDisabled(true)
@@ -64,7 +64,7 @@ export function Calcinput({dispatch,tasks}){
                 </div>
                 </>
                 }
-            <br />  <button className="btncalc" disabled={disabled}>Calc</button>
+            <br />  <button className="btncalc" disabled={disabled} type="submit">Calc</button>
         </form>
         <button onClick={reset} className="btnreset">New Calc</button>
          </div>
